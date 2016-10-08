@@ -1,4 +1,4 @@
-var db = require('./database_new');
+// var db = require('./database_new');
 var mtg = require('mtgsdk');  // get api functions
 var exports = module.exports = {};  // set exports object
 
