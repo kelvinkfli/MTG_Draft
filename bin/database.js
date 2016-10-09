@@ -11,7 +11,7 @@ var zendikarUncommon;
 var zendikarRares;
 
 // Connect to database
-MongoClient.connect(url, function(err, db) {
+db = MongoClient.connect(url, function(err, db) {
     // Error handler for server connection
     if (err) {
         console.log('Unable to connect to the mongoDB server. Error:', err);
@@ -55,7 +55,7 @@ MongoClient.connect(url, function(err, db) {
             });
         };
     });
-    
+
     zendikarBooster.count(function (err, count) {
         if (!err && count === 0 ) {
             expfunc.generateBooster(zendikarRares, zendikarUncommon, zendikarCommon, zendikarBooster)

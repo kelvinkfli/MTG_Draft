@@ -27,7 +27,7 @@ app.listen(port, function(err) {
 });*/
 
 app.get('/booster', function(req,res){
-    res.send()
+  //  res.send()
 })
 
 // router.get('/boostercard', function(req,res){
