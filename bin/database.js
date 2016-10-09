@@ -15,9 +15,8 @@ function connect(){
         console.log('Unable to connect to the mongoDB server. Error:', err);
       }
       else {
-        connection = db;
         console.log('Connected to mongoDB.');
-        emitter.emit('connected', connection);
+        emitter.emit('connected', db);
       }
   });
   return emitter;
