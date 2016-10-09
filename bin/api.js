@@ -13,12 +13,13 @@ module.exports = {
 };
 
 function getConnection(){
-  connection = database.connect();
-  connection.on('connected', setDBConnection);
+  connection = database.connect();  //immediately stores emitter so we are listening to events in database.js
+  connection.on('connected', setDBConnection); //event listener: when 'connected' message is received, run setDBConnection
+  //callback function from mongoClient.connect will emit 'connected' message, thus triggering setDBConnection on line 17
 }
 
-function setDBConnection(connection){
-  db = connection;
+function setDBConnection(connection){ //these connection parameters are taken from line 19 of database.js
+  db = connection; //this variable holds an instance of our mongo connection, so we can use mongodb commands
   console.log('MongoDB connection established with API.')
 }
 
