@@ -1,7 +1,6 @@
 var mongodb = require('mongodb');
 var MongoClient = mongodb.MongoClient;
 var url = 'mongodb://localhost:27017/mtg_db';
-var x;
 
 const EventEmitter = require('events').EventEmitter;
 var emitter = new EventEmitter;
