@@ -1,41 +1,55 @@
-//module dependencies
 var express = require('express');
-var http = require('http');
 var path = require('path');
-var port = 3000;
-var fs = require('fs');
-
 var app = express();
 var router = express.Router();
 
-var mongo = require('mongodb');
-var monk = require('monk');
-var db = require('./database.js');
+var api = require('./api.js');
+var port = 3000;
 
-//connect to server
-app.listen(port, function(err) {
-    if (err) {
-        return console.log('problem with server', err)
-    }
-    console.log('server is listening on port ' + port);
-})
+app.use(router);
+app.listen(port, handleServerError);
+api.getConnection();
 
-// Make our db accessible to our router
-/*app.use(function(req,res,next){
-    req.db = db;
-    next();
-});*/
+router.get('/seed/all', seedAll);
+router.get('/seed/rares', seedRare);
+router.get('/seed/uncommons', seedUncommon);
+router.get('/seed/commons', seedCommon);
+router.get('/booster/generate', generateBooster);
+router.get('/booster', getBooster);
 
-app.get('/booster', function(req,res){
-    res.send()
-})
+function handleServerError(error) {
+  if (error) {
+      return console.log('problem with server', error)
+  }
+  console.log('server is listening on port ' + port);
+}
 
-// router.get('/boostercard', function(req,res){
-//     var db = req.db;
-//     var collection = db.get('zendikar_booster');
-//     collection.find(function(e,docs){
-//         res.render('boostercard', {
-//            docs
-//         });
-//     }).pretty()
-// })
+function seedAll(request, res){
+  api.seedCards();
+  res.send("seeded master database with all cards");
+}
+
+function seedCommon(request, res){
+  api.seedCommons();
+  res.send("seeded commons database");
+}
+
+function seedUncommon(request, res){
+  api.seedUncommons();
+  res.send("seeded uncommons database");
+}
+
+function seedRare(request, res){
+  api.seedRares();
+  res.send("seeded rares database");
+}
+
+function generateBooster(request, res){
+  booster = api.generateBooster();
+  res.send("generated booster");
+}
+
+function getBooster(request, res){
+  booster = api.getBooster();
+  res.send(booster);
+}

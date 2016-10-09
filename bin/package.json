@@ -1,0 +1,25 @@
+{
+  "name": "mtg_draft",
+  "version": "1.0.0",
+  "description": "mtg draft simulator",
+  "main": "express_server.js",
+  "dependencies": {
+    "express": "^4.14.0",
+    "mongodb": "^2.2.10",
+    "mtgsdk": "^0.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kelvinkfli/MTG_Draft.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kelvinkfli/MTG_Draft/issues"
+  },
+  "homepage": "https://github.com/kelvinkfli/MTG_Draft#readme"
+}
