@@ -13,8 +13,7 @@ module.exports = {
 };
 
 function getConnection(){
-  connection = database.connect();
-  connection.on('connected', setDBConnection);
+  database.connect(setDBConnection);
 }
 
 function setDBConnection(connection){
