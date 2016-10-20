@@ -6,14 +6,14 @@ module.exports = {
   connect: connect
 };
 
-function connect(callback){
+function connect(callback){ //will take in setDBConnection as callback
   MongoClient.connect(url, function(err, db) {
       if (err) {
         console.log('Unable to connect to the mongoDB server. Error:', err);
       }
       else {
         console.log('Connected to mongoDB.');
-        callback(db);
+        callback(db); //setDBConnection(db) will be called here via api.js
       }
   });
 }

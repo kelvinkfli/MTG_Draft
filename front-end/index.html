@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MTG Draft</title>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://unpkg.com/flickity@2.0/dist/flickity.pkgd.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2.0/dist/flickity.css" media="screen">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <section class="hero">
+        <p class="hero-title">Lorem ipsum dolor sit.</p>
+        <button class="hero-button" type="button">start</button>
+    </section>
+    <section class="set-selection">
+        <div class="set-selection-header">
+            <h1>SELECT YOUR PACKS</h1>
+        </div>
+        <div class="carousel set-selection-container" data-flickity='{ "wrapAround": true, "draggable": false }'>
+            <div class="carousel-cell zendikar">
+                <p>Zendikar</p>
+            </div>
+            <div class="carousel-cell worldwake">
+                <p>Worldwake</p>
+            </div>
+            <div class="carousel-cell ascension">
+                <p>Dark Ascension</p>
+            </div>
+            <div class="carousel-cell mirrodin">
+                <p>Mirrodin Besieged</p>
+            </div>
+        </div>
+        <div class="booster-confirm">
+            <div class="booster-confirm-third">
+                <button id="button-1" class="booster-button" type="button">Confirm Pack 1</button>
+                <div id="confirm-1" class="booster-confirm-area">Not Yet Confirmed</div>
+            </div>
+            <div class="booster-confirm-third">
+                <button id="button-2" class="booster-button" type="button">Confirm Pack 2</button>
+                <div id="confirm-2" class="booster-confirm-area">Not Yet Confirmed</div>
+            </div>
+            <div class="booster-confirm-third">
+                <button id="button-3" class="booster-button" type="button">Confirm Pack 3</button>
+                <div id="confirm-3" class="booster-confirm-area">Not Yet Confirmed</div>
+            </div>
+        </div>
+    </section>
+    <section class="card-selection">
+        <button class="start-draft" type="button">Start Draft</button>
+        <ul class="card-container">
+        </ul>
+    </section>
+</body>
+</html>
