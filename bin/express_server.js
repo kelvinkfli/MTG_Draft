@@ -16,7 +16,6 @@ app.use(function(req, res, next) {
   // Pass to next layer of middleware
   next();
 });
-
 app.use(router);
 app.listen(port, handleServerError);
 api.getConnection(); //establish mongoDB connection
@@ -26,8 +25,22 @@ router.get('/seed/zendikar/all', seedAll);
 router.get('/seed/zendikar/rares', seedRare);
 router.get('/seed/zendikar/uncommons', seedUncommon);
 router.get('/seed/zendikar/commons', seedCommon);
-router.get('/seed/zendikar/generate', generateBooster);
 router.get('/generate/zendikar/booster', api.generateZendikarBooster);
+router.get('/seed/worldwake/all', api.seedWorldwake);
+router.get('/seed/worldwake/rares', api.seedWorldwakeRares);
+router.get('/seed/worldwake/uncommons', api.seedWorldwakeUncommons);
+router.get('/seed/worldwake/commons', api.seedWorldwakeCommons);
+router.get('/generate/worldwake/booster', api.generateWorldwakeBooster);
+router.get('/seed/darkascension/all', api.seedDarkAsc);
+router.get('/seed/darkascension/rares', api.seedDarkAscRares);
+router.get('/seed/darkascension/uncommons', api.seedDarkAscUncommons);
+router.get('/seed/darkascension/commons', api.seedDarkAscCommons);
+router.get('/generate/DarkAscension/booster', api.generateDarkAscBooster);
+router.get('/seed/mirrodinbesieged/all', api.seedMbs);
+router.get('/seed/mirrodinbesieged/rares', api.seedMbsRares);
+router.get('/seed/mirrodinbesieged/uncommons', api.seedMbsUncommons);
+router.get('/seed/mirrodinbesieged/commons', api.seedMbsCommons);
+router.get('/generate/MirrodinBesieged/booster', api.generateMbsBooster);
 
 function handleServerError(error) {
   if (error) {
@@ -39,6 +52,11 @@ function handleServerError(error) {
 function seedAll(req, res){
   api.seedCards();
   res.send("seeded master database with all cards");
+}
+
+function seedWorldwake(req, res){
+    api.seedCards('wwk');
+    res.send("seeded master database with worldwake cards");
 }
 
 function seedCommon(req, res){

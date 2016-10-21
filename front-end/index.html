@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>MTG Draft</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://unpkg.com/flickity@2.0/dist/flickity.pkgd.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/flickity@2.0/dist/flickity.css" media="screen">
@@ -10,47 +11,116 @@
     <script src="script.js"></script>
 </head>
 <body>
-    <section class="hero">
-        <p class="hero-title">Lorem ipsum dolor sit.</p>
-        <button class="hero-button" type="button">start</button>
+    <section class="hero" id="hero-page">
+        <div class="hero-filter">
+            <p class="hero-title">Magic: The Gathering</p>
+            <p class="hero-tagline">Draft Simulator</p>
+            <a href="#set-page" class="hero-button"><i class="fa fa-angle-double-down"></i></a>
+        </div>
     </section>
-    <section class="set-selection">
+    <section class="set-selection" id="set-page">
         <div class="set-selection-header">
             <h1>SELECT YOUR PACKS</h1>
         </div>
         <div class="carousel set-selection-container" data-flickity='{ "wrapAround": true, "draggable": false }'>
-            <div class="carousel-cell zendikar">
-                <p>Zendikar</p>
-            </div>
             <div class="carousel-cell worldwake">
-                <p>Worldwake</p>
+                <div class="carousel-filter">
+                    <!--<img src="assets/kelvin4.png" alt="">-->
+                    <p class="set-title">Worldwake</p>
+                    <div class="set-modal">
+                        <i class="fa fa-angle-down set-modal-exit"></i>
+                        <img src="assets/kelvin_redo.png" alt="">
+                        <h3>WORLDWAKE</h3>
+                        <ul>
+                            <li>Set Size: 145</li>
+                            <li>Released: February 5, 2010</li>
+                            <li>Themes: Quests, Traps</li>
+                            <li>Keywords: Landfall, Multikicker</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-cell zendikar">
+                <div class="carousel-filter">
+                    <p class="set-title">Zendikar</p>
+                </div>
+                <div class="set-modal">
+                    <i class="fa fa-angle-down set-modal-exit"></i>
+                    <img src="assets/kelvin4.png" alt="">
+                    <h3>ZENDIKAR</h3>
+                    <ul>
+                        <li>Set Size: 249</li>
+                        <li>Released: October 2, 2009</li>
+                        <li>Themes: Ally, Quest Enchantment</li>
+                        <li>Keywords: Kicker, Intimidate</li>
+                    </ul>
+                </div>
             </div>
             <div class="carousel-cell ascension">
-                <p>Dark Ascension</p>
+                <div class="carousel-filter">
+                    <p class="set-title">Dark Ascension</p>
+                    <div class="set-modal">
+                        <i class="fa fa-angle-down set-modal-exit"></i>
+                        <img src="assets/kelvin3.png" alt="">
+                        <h3>DARK ASCENSION</h3>
+                        <ul>
+                            <li>Set Size: 158</li>
+                            <li>Released: February 3, 2012</li>
+                            <li>Themes: Transform, Morbid</li>
+                            <li>Keywords: Undying, Flashback, Fateful Hour</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
             <div class="carousel-cell mirrodin">
-                <p>Mirrodin Besieged</p>
+                <div class="carousel-filter">
+                    <p class="set-title">Mirrodin Besieged</p>
+                    <div class="set-modal">
+                        <i class="fa fa-angle-down set-modal-exit"></i>
+                        <img src="assets/kelvin1.png" alt="">
+                        <h3>MIRRODIN BESIEGED</h3>
+                        <ul>
+                            <li>Set Size: 155</li>
+                            <li>Released: February 4, 2011</li>
+                            <li>Themes: Living Weapon</li>
+                            <li>Keywords: Infect, Proliferate</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="booster-confirm">
             <div class="booster-confirm-third">
-                <button id="button-1" class="booster-button" type="button">Confirm Pack 1</button>
-                <div id="confirm-1" class="booster-confirm-area">Not Yet Confirmed</div>
+                <button id="button-1" class="booster-button" type="button">Select Pack 1</button>
+                <div id="confirm-1" class="booster-confirm-area">Not Yet Selected</div>
             </div>
             <div class="booster-confirm-third">
-                <button id="button-2" class="booster-button" type="button">Confirm Pack 2</button>
-                <div id="confirm-2" class="booster-confirm-area">Not Yet Confirmed</div>
+                <button id="button-2" class="booster-button" type="button">Select Pack 2</button>
+                <div id="confirm-2" class="booster-confirm-area">Not Yet Selected</div>
             </div>
             <div class="booster-confirm-third">
-                <button id="button-3" class="booster-button" type="button">Confirm Pack 3</button>
-                <div id="confirm-3" class="booster-confirm-area">Not Yet Confirmed</div>
+                <button id="button-3" class="booster-button" type="button">Select Pack 3</button>
+                <div id="confirm-3" class="booster-confirm-area">Not Yet Selected</div>
             </div>
         </div>
+        <div class="booster-lockin">
+            <a href="#card-page"><i class="fa fa-angle-double-down"></i></a>
+        </div>
     </section>
-    <section class="card-selection">
+    <section class="card-selection" id="card-page">
         <button class="start-draft" type="button">Start Draft</button>
+        <!--<button class="start-booster-three" type="button">Start Booster Three</button>-->
+        <!--<button class="check" type="button">check</button>-->
         <ul class="card-container">
         </ul>
+        <div class="booster-two-overlay">
+            <p>SOME MESSAGE FOR BOOSTER TWO HEREEEE</p>
+            <button class="start-booster-two" type="button">Start Booster Two</button>
+        </div>
+        <div class="booster-three-overlay">
+            <p>SOME MESSAGE FOR BOOSTER THREE HEREEEE</p>
+            <button class="start-booster-three" type="button">Start Booster Three</button>
+        </div>
     </section>
 </body>
 </html>

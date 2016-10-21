@@ -1,9 +1,36 @@
-var p1 = Promise.resolve(3);
-var p2 = 1337;
-var p3 = new Promise((resolve, reject) => {
-    setTimeout(resolve, 100, "foo");
-});
+// myListofBeers = ['beer1', 'beer2', 'beer3', 'beer4', 'beer5'];
+//
+// var beerCounter = 0
+//
+// var STARTbutton = function(){
+//     console.log(myListofBeers[beerCounter] + ' is being displayed');
+//     // console.log(beerCounter);
+// }
+//
+// var NEXTbutton = function(){
+//     beerCounter = beerCounter + 1;
+//     console.log(myListofBeers[beerCounter] + ' is being displayed');
+//     // console.log(beerCounter);
+// }
+//
+// STARTbutton();
+// NEXTbutton();
 
-Promise.all([p1, p2, p3]).then(values => {
-    console.log(values); // [3, 1337, "foo"]
-});
+var price = 108123;
+
+var decimalprice = (price/100).toFixed(2);
+
+var finalprice = `\$${decimalprice}`
+var finalpriceWITHOUTtemplate = '$' + decimalprice
+
+console.log(decimalprice);
+console.log(finalprice);
+console.log(finalpriceWITHOUTtemplate);
+
+
+
+
+
+
+
+// beerCounter += 1;
