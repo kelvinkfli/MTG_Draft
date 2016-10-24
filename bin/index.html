@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MTG Draft</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://unpkg.com/flickity@2.0/dist/flickity.pkgd.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2.0/dist/flickity.css" media="screen">
+    <link rel="stylesheet" href="hover/Hover-master/css/hover-min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="shortcut icon" type="image/ico" href="favicon.ico" />
+    <script src="script.js"></script>
+</head>
+<body>
+    <section class="hero" id="hero-page">
+        <div class="hero-filter">
+            <p class="hero-title">Magic: The Gathering</p>
+            <p class="hero-tagline">Draft Simulator</p>
+            <a href="#set-page" class="hero-button"><img src="assets/kelvin4-white.png" alt=""></a>
+        </div>
+    </section>
+    <section class="set-selection" id="set-page">
+        <div class="set-selection-header">
+            <h1>SELECT YOUR PACKS</h1>
+        </div>
+        <div class="carousel set-selection-container" data-flickity='{ "wrapAround": true, "draggable": false }'>
+            <div class="carousel-cell worldwake">
+                <div class="carousel-filter">
+                    <p class="set-title">Worldwake<span></span></p>
+                    <div class="set-modal">
+                        <i class="fa fa-angle-down set-modal-exit"></i>
+                        <img src="assets/kelvin_redo.png" alt="">
+                        <h3>WORLDWAKE</h3>
+                        <ul>
+                            <li>Set Size: 145</li>
+                            <li>Released: February 5, 2010</li>
+                            <li>Themes: Quests, Traps</li>
+                            <li>Keywords: Landfall, Multikicker</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-cell zendikar">
+                <div class="carousel-filter">
+                    <p class="set-title">Zendikar<span></span></p>
+                </div>
+                <div class="set-modal">
+                    <i class="fa fa-angle-down set-modal-exit"></i>
+                    <img src="assets/kelvin4.png" alt="">
+                    <h3>ZENDIKAR</h3>
+                    <ul>
+                        <li>Set Size: 249</li>
+                        <li>Released: October 2, 2009</li>
+                        <li>Themes: Ally, Quest Enchantment</li>
+                        <li>Keywords: Kicker, Intimidate</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="carousel-cell ascension">
+                <div class="carousel-filter">
+                    <p class="set-title">Dark Ascension<span></span></p>
+                    <div class="set-modal">
+                        <i class="fa fa-angle-down set-modal-exit"></i>
+                        <img src="assets/kelvin3.png" alt="">
+                        <h3>DARK ASCENSION</h3>
+                        <ul>
+                            <li>Set Size: 158</li>
+                            <li>Released: February 3, 2012</li>
+                            <li>Themes: Transform, Morbid</li>
+                            <li>Keywords: Undying, Fateful Hour</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-cell mirrodin">
+                <div class="carousel-filter">
+                    <p class="set-title">Mirrodin Besieged<span></span></p>
+                    <div class="set-modal">
+                        <i class="fa fa-angle-down set-modal-exit"></i>
+                        <img src="assets/kelvin1.png" alt="">
+                        <h3>MIRRODIN BESIEGED</h3>
+                        <ul>
+                            <li>Set Size: 155</li>
+                            <li>Released: February 4, 2011</li>
+                            <li>Themes: Living Weapon</li>
+                            <li>Keywords: Infect, Proliferate</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="booster-confirm">
+            <div class="booster-confirm-third">
+                <button id="button-1" class="booster-button" type="button">Select Pack 1</button>
+                <div id="confirm-1" class="booster-confirm-area">Not Selected</div>
+            </div>
+            <div class="booster-confirm-third">
+                <button id="button-2" class="booster-button" type="button">Select Pack 2</button>
+                <div id="confirm-2" class="booster-confirm-area">Not Selected</div>
+            </div>
+            <div class="booster-confirm-third">
+                <button id="button-3" class="booster-button" type="button">Select Pack 3</button>
+                <div id="confirm-3" class="booster-confirm-area">Not Selected</div>
+            </div>
+        </div>
+        <div class="booster-lockin">
+            <a href="#card-page" class="set-button"><img src="assets/kelvin4-white.png" alt=""></a>
+        </div>
+    </section>
+    <section class="card-selection" id="card-page">
+        <div class="card-selection-header">
+            <h1>SELECT YOUR CARDS</h1>
+        </div>
+        <ul class="card-selection-tracker">
+            <li id="booster-count">Booster 1</li>
+            <li id="pick-count">Pick 1</li>
+            <li id="pack-count">Pack 1</li>
+        </ul>
+        <button class="start-draft hvr-sweep-to-right" type="button">Start Booster One</button>
+        <ul class="card-container"></ul>
+        <div class="footer">
+            <div class="footer-left">Site and API developed by: Kelvin Li</div>
+            <div class="footer-right">Powered by: <a href="https://github.com/MagicTheGathering/mtg-sdk-javascript">MTGSDK</a></div>
+        </div>
+        <div class="booster-two-overlay">
+            <p>Booster One Completed</p>
+            <button class="start-booster-two hvr-sweep-to-right" type="button">Start Booster Two</button>
+            <button class="view-picks hvr-sweep-to-right" type="button">View Picks</button>
+        </div>
+        <div class="booster-three-overlay">
+            <p>Booster Two Completed</p>
+            <button class="start-booster-three hvr-sweep-to-right" type="button">Start Booster Three</button>
+            <button class="view-picks hvr-sweep-to-right" type="button">View Picks</button>
+        </div>
+        <div class="final-overlay">
+            <p>Draft Completed</p>
+            <a href="." class="restart-button hvr-sweep-to-right" type="button">Start New Draft</a>
+            <button class="view-picks hvr-sweep-to-right" type="button">View Picks</button>
+
+        </div>
+        <div class="user-picks-overlay">
+            <div class="user-picks-header">
+                <h1>Your Picks</h1>
+            </div>
+            <div class="main-carousel user-picks-carousel" data-flickity='{ "wrapAround": true, "draggable": false }'>
+                <div class="carousel-cell" id="cellRemove">TESTING</div>
+            </div>
+            <div class="close-picks-section">
+                <button class="close-picks hvr-sweep-to-right" type="button">Close</button>
+            </div>
+        </div>
+        <div class="error-message">Please select three packs</div>
+    </section>
+</body>
+</html>
